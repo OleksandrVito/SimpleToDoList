@@ -1,4 +1,4 @@
-# Security Policy
+# Privacy Policy
 
 This Privacy Policy describes the information collected through our mobile applications and how we use that information.
 Our Apps:
