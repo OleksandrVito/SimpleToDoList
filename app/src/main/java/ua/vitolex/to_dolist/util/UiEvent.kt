@@ -1,6 +1,6 @@
 package ua.vitolex.to_dolist.util
 
-import android.app.UiAutomation
+import androidx.compose.ui.res.stringResource
 
 sealed class UiEvent {
     object PopBackStack : UiEvent()

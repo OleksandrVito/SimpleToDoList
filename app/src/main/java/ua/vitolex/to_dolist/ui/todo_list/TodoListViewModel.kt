@@ -1,5 +1,6 @@
 package ua.vitolex.to_dolist.ui.todo_list
 
+import androidx.compose.ui.text.intl.Locale
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -37,17 +38,19 @@ class TodoListViewModel @Inject constructor(
                     viewModelScope.launch {
                         repository.insertTodo(todo)
                     }
-
                 }
             }
             is TodoListEvent.OnDeleteTodoClick -> {
+
                 viewModelScope.launch {
                     deletedTodo = event.todo
                     repository.deleteTodo(event.todo)
+
                     sendUiEvent(
                         UiEvent.ShowSnackbar(
-                            message = "Todo deleted",
-                            action = "Undo"
+                            message =  if( Locale.current.region == "UA") "Справа видалена"
+                            else "Deleted todo",
+                            action = if( Locale.current.region == "UA") "Відміна" else "Undo"
                         )
                     )
                 }
