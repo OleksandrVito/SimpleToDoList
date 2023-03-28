@@ -44,7 +44,7 @@ fun SplashScreen(
         alpha.animateTo(
             targetValue = 1f,
             animationSpec = tween(
-                durationMillis = 5000,
+                durationMillis = 1000,
             )
         )
         delay(500L)
