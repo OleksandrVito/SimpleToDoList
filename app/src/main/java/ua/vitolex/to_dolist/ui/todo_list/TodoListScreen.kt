@@ -40,9 +40,6 @@ fun TodoListScreen(
     navController: NavController,
 ) {
 
-    BackHandler(enabled = true) {
-    }
-
     val todos = viewModel.todos.collectAsState(initial = emptyList())
     val scaffoldState = rememberScaffoldState()
     LaunchedEffect(key1 = true) {
@@ -82,6 +79,7 @@ fun TodoListScreen(
                 .fillMaxSize()
                 .background(MaterialTheme.colors.primary)
                 .padding(16.dp)
+                .padding(top = 16.dp),
         ) {
             if (todos.value.size < 1) {
                 item {

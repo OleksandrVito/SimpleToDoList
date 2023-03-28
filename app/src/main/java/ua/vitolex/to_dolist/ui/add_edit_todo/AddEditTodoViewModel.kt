@@ -71,8 +71,8 @@ class AddEditTodoViewModel @Inject constructor(
                     }
                     repository.insertTodo(
                         Todo(
-                            title = title,
-                            description = description,
+                            title = title.trim(),
+                            description = description.trim(),
                             isDone = todo?.isDone ?: false,
                             id = todo?.id
                         )

@@ -35,34 +35,20 @@ import ua.vitolex.to_dolist.util.Routes
 fun SplashScreen(
     navController: NavController
 ) {
-    val scale = remember {
-        Animatable(1f)
-    }
+
     val alpha = remember {
         Animatable(0f)
     }
 
     LaunchedEffect(key1 = true) {
-        scale.animateTo(
-            targetValue = 3f,
-            animationSpec = tween(
-                durationMillis = 2000,
-                easing = {
-                    OvershootInterpolator(4f).getInterpolation(it)
-                }
-            )
-        )
-        delay(0L)
         alpha.animateTo(
             targetValue = 1f,
             animationSpec = tween(
-                durationMillis = 1000,
-                easing = {
-                    OvershootInterpolator(1f).getInterpolation(it)
-                }
+                durationMillis = 5000,
             )
         )
-        delay(0L)
+        delay(500L)
+        navController.popBackStack()
         navController.navigate(Routes.TODO_LIST)
     }
     Box(
@@ -78,15 +64,16 @@ fun SplashScreen(
                 painter = painterResource(id = R.drawable.ic_todo_96),
                 contentDescription = stringResource(R.string.list),
                 modifier = Modifier
-                    .scale(scale.value)
+                    .scale(3.5f)
+                    .alpha(alpha.value)
                     .clip(RoundedCornerShape(3.dp))
             )
-            Spacer(modifier = Modifier.height(48.dp))
+            Spacer(modifier = Modifier.height(56.dp))
             Text(
                 text = stringResource(R.string.todo_list),
                 style = MaterialTheme.typography.body1,
                 color = MaterialTheme.colors.secondary,
-                fontSize = 24.sp,
+                fontSize = 22.sp,
                 fontWeight= FontWeight.Bold,
                 modifier = Modifier.alpha(alpha.value)
             )

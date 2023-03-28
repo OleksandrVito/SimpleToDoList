@@ -20,6 +20,7 @@ import java.util.*
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        MobileAds.initialize( this )
         super.onCreate(savedInstanceState)
         setContent {
             ToDoListTheme {

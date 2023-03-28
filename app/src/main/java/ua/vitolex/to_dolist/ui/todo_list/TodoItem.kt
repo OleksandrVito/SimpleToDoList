@@ -61,7 +61,7 @@ fun TodoItem(
                     modifier = Modifier.padding(0.dp)
                 ) {
                     Text(
-                        text = todo.title,
+                        text = todo.title.trim(),
                         fontSize = 20.sp,
                         fontWeight = FontWeight.Medium,
                         fontFamily = montserratFF,
@@ -69,7 +69,7 @@ fun TodoItem(
                 }
                 if (todo.description != "") {
                     Text(
-                        text = todo.description ?: "",
+                        text = todo.description?.trim() ?: "",
                         fontSize = 16.sp,
                         fontFamily = montserratFF
                     )
