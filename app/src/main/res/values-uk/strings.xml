@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Список справ</string>
+    <string name="title">Заголовок</string>
+    <string name="description">Опис</string>
+    <string name="title_message">Заголовок не може бути порожнім</string>
+    <string name="delete">Видалити</string>
+    <string name="add">Додати</string>
+    <string name="info_messange">Додай сюди свої справи</string>
+    <string name="todo_list">Список справ</string>
+    <string name="list">Список</string>
+</resources>
