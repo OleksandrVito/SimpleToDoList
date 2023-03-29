@@ -64,7 +64,7 @@ fun SplashScreen(
                 painter = painterResource(id = R.drawable.ic_todo_96),
                 contentDescription = stringResource(R.string.list),
                 modifier = Modifier
-                    .scale(3.5f)
+                    .scale(3f)
                     .alpha(alpha.value)
                     .clip(RoundedCornerShape(3.dp))
             )
@@ -73,7 +73,7 @@ fun SplashScreen(
                 text = stringResource(R.string.todo_list),
                 style = MaterialTheme.typography.body1,
                 color = MaterialTheme.colors.secondary,
-                fontSize = 22.sp,
+                fontSize = 24.sp,
                 fontWeight= FontWeight.Bold,
                 modifier = Modifier.alpha(alpha.value)
             )
